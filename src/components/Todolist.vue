@@ -4,7 +4,7 @@
     <div>
         <input type="text" placeholder="enter your task here" v-model="newTask" @keyup.enter="addTask">
     </div>
-            <a v-for="task in tasks" :key="task.id" class="tasks" :class="{completed : task.completed}">   
+            <a v-for="task in tasks" :key="task.id" class="task" :class="{completed : task.completed}">   
             <div>   
             <input type="checkbox" v-model="task.completed" class="toggle">
             <label>{{ task.title }}</label>
@@ -20,10 +20,11 @@
 <style>
 .completed {
   color: green;
-  background: black;
+  font-style: italic;
   width: 80%;
   margin: auto;
 }
+
 
 </style>
 
