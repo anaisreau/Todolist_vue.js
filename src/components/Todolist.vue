@@ -1,11 +1,13 @@
 <template>
-<div>
+<div class="content">
     To Do List Vue.js 
     <div>
-        <input type="text" placeholder="enter your task here" v-model="newTask" @keyup.enter="addTask">
-    </div>
+        <br/>
+        <input class='input' type="text" placeholder="enter your task here" v-model="newTask" @keyup.enter="addTask">
+        
+    </div><br/>
             <a v-for="task in tasks" :key="task.id" class="task" :class="{completed : task.completed}">   
-            <div>   
+            <div class="todos">   
             <input type="checkbox" v-model="task.completed" class="toggle">
             <label>{{ task.title }}</label>
             </div>    
@@ -25,6 +27,25 @@
   margin: auto;
 }
 
+.content{
+    font-size: 2em;
+    }
+
+.todos{
+    text-align: left;
+    margin-left: 30%;
+    }
+
+.toggle{
+    margin-right: 1.5em;
+    width:30px;
+	height:30px;
+    }
+
+.input{
+    width:40%;
+    font-size : 1em
+     }
 
 </style>
 
