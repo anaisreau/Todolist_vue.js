@@ -3,7 +3,8 @@
     To Do List Vue.js
     <div>
       <div>
-        <h4 v-if="incomplete">You still have {{ incomplete }} task to do</h4>
+        <h3 v-if="incomplete">You still have {{ incomplete }} task to do</h3>
+        <h3 v-else>There is no more task to finish ! :)</h3>
       </div>
       <input
         class="input"
@@ -55,6 +56,7 @@
 .input {
   width: 40%;
   font-size: 1em;
+  margin-top: 1.5em;
 }
 </style>
 
@@ -66,7 +68,7 @@ export default {
       newTask: "",
       idTask: [],
       incompleted: [],
-      tasks: [{}],
+      tasks: [],
     };
   },
 
@@ -80,7 +82,7 @@ export default {
     addTask() {
       if (this.newTask) {
         this.tasks.push({
-          id: this.idTask,
+          id: this.idTask++,
           title: this.newTask,
           completed: false,
         });
